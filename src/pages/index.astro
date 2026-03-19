@@ -1,0 +1,260 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Omphile Pest Solutions – Professional Pest Control">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <Navbar activePage="home" variant="dark" />
+    <div class="hero-text">
+      <h1 class="hero-name">OMPHILE PEST SOLUTIONS</h1>
+      <div class="hero-gold-line"></div>
+      <p class="hero-tagline">Where Protection Meets Peace of Mind</p>
+    </div>
+    <div class="scroll-hint">
+      <span class="scroll-text">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="intro">
+    <div class="intro-left">
+      <div class="intro-label">
+        <div class="intro-label-line"></div>
+        <span>OUR MISSION</span>
+      </div>
+      <h2 class="intro-heading">We protect what<br>matters most.</h2>
+      <p class="intro-body">
+        Rooted in years of expertise and a deep commitment to our community, Omphile Pest Solutions delivers reliable, safe, and effective pest control services. From residential homes to commercial properties, we bring industry-leading solutions with a personal touch that sets us apart.
+      </p>
+      <div class="intro-accent"></div>
+    </div>
+    <div class="intro-right">
+      <div class="intro-portrait"></div>
+      <div class="intro-portrait-border"></div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="services-preview">
+    <span class="section-label">OUR SERVICES</span>
+    <h2 class="section-heading">What We Offer</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-image residential"></div>
+        <div class="service-info">
+          <span class="service-category">RESIDENTIAL</span>
+          <h3 class="service-title">Home Pest Control</h3>
+          <p class="service-meta">Cockroaches &middot; Ants &middot; Rodents</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image commercial"></div>
+        <div class="service-info">
+          <span class="service-category">COMMERCIAL</span>
+          <h3 class="service-title">Business Protection</h3>
+          <p class="service-meta">Restaurants &middot; Offices &middot; Warehouses</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image termite"></div>
+        <div class="service-info">
+          <span class="service-category">SPECIALIST</span>
+          <h3 class="service-title">Termite Treatment</h3>
+          <p class="service-meta">Inspection &middot; Treatment &middot; Prevention</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull Quote -->
+  <section class="quote-section">
+    <span class="quote-open">&ldquo;</span>
+    <p class="quote-text">
+      Your safety is our priority.<br>Your home is our responsibility.
+    </p>
+    <span class="quote-close">&rdquo;</span>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <span class="section-label">READY TO GET STARTED?</span>
+    <h2 class="cta-heading">Get a Free Quote</h2>
+    <p class="cta-desc">We offer free inspections and competitive pricing for all residential and commercial pest control needs.</p>
+    <a href="/contact" class="cta-button">GET IN TOUCH</a>
+    <p class="cta-email">info@omphilepestsolutions.co.za</p>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    max-height: 900px;
+    background: url('https://images.unsplash.com/photo-1585429514710-67f0ece1226e?w=1440&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0) 40%, rgba(10,10,10,0.53) 100%);
+  }
+
+  .hero-text {
+    position: absolute;
+    bottom: 80px;
+    left: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+    z-index: 1;
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 400;
+    color: #FAF8F5;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+
+  .hero-gold-line { width: 120px; height: 2px; background: var(--accent-gold); }
+
+  .hero-tagline {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: rgba(250,248,245,0.67);
+    letter-spacing: 1px;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 60px;
+    right: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
+  }
+
+  .scroll-text {
+    font-family: var(--font-body);
+    font-size: 10px;
+    color: rgba(250,248,245,0.5);
+    letter-spacing: 2px;
+  }
+
+  .scroll-line { width: 1px; height: 32px; background: rgba(250,248,245,0.25); }
+
+  .intro {
+    display: flex;
+    padding: 80px 56px;
+    background: var(--bg-ivory);
+  }
+
+  .intro-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    padding: 40px 64px 40px 0;
+  }
+
+  .intro-label { display: flex; align-items: center; gap: 12px; }
+  .intro-label-line { width: 32px; height: 1px; background: var(--accent-gold); }
+  .intro-label span { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 4px; color: var(--accent-gold); }
+
+  .intro-heading { font-family: var(--font-display); font-size: 44px; font-weight: 400; color: var(--text-primary); line-height: 1.2; }
+  .intro-body { font-family: var(--font-body); font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
+  .intro-accent { width: 60px; height: 2px; background: var(--accent-gold); }
+
+  .intro-right { position: relative; width: 480px; height: 520px; flex-shrink: 0; }
+  .intro-portrait { position: absolute; left: 60px; top: 20px; width: 380px; height: 480px; background: url('https://images.unsplash.com/photo-1632935190593-e18460fa1534?w=600&q=80') center/cover no-repeat; }
+  .intro-portrait-border { position: absolute; left: 80px; top: 40px; width: 380px; height: 480px; border: 1px solid var(--accent-gold); }
+
+  .services-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 80px 120px;
+    background: var(--bg-ivory);
+  }
+
+  .section-label { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 4px; color: var(--accent-gold); }
+  .section-heading { font-family: var(--font-display); font-size: 42px; font-weight: 400; color: var(--text-primary); }
+
+  .services-grid { display: flex; gap: 20px; width: 100%; }
+  .service-card { flex: 1; display: flex; flex-direction: column; }
+  .service-image { width: 100%; height: 400px; background-size: cover; background-position: center; }
+  .service-image.residential { background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80'); }
+  .service-image.commercial { background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'); }
+  .service-image.termite { background-image: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=600&q=80'); }
+
+  .service-info { display: flex; flex-direction: column; gap: 8px; padding: 16px 0 0 0; }
+  .service-category { font-family: var(--font-body); font-size: 10px; font-weight: 500; letter-spacing: 3px; color: var(--accent-gold); }
+  .service-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--text-primary); }
+  .service-meta { font-family: var(--font-body); font-size: 12px; color: var(--text-secondary); }
+
+  .quote-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 100px 200px;
+    background: var(--surface-linen);
+  }
+
+  .quote-open, .quote-close { font-family: var(--font-display); font-size: 120px; color: var(--accent-gold); opacity: 0.5; line-height: 0.5; }
+  .quote-text { font-family: var(--font-display); font-size: 32px; font-style: italic; color: var(--text-primary); text-align: center; line-height: 1.6; }
+
+  .cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 80px 120px;
+    background: var(--bg-ivory);
+  }
+
+  .cta-heading { font-family: var(--font-display); font-size: 48px; font-weight: 400; color: var(--text-primary); }
+  .cta-desc { font-family: var(--font-body); font-size: 16px; color: var(--text-secondary); text-align: center; line-height: 1.6; max-width: 500px; }
+  .cta-button { display: inline-flex; align-items: center; font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 2px; color: var(--white); background: var(--accent-gold); padding: 16px 48px; transition: opacity 0.3s; }
+  .cta-button:hover { opacity: 0.9; }
+  .cta-email { font-family: var(--font-body); font-size: 14px; color: var(--text-secondary); letter-spacing: 1px; }
+
+  @media (max-width: 1024px) {
+    .services-grid { flex-direction: column; }
+    .service-image { height: 300px; }
+  }
+
+  @media (max-width: 768px) {
+    .hero-name { font-size: 40px; }
+    .hero-text { left: 24px; bottom: 60px; }
+    .scroll-hint { display: none; }
+    .intro { flex-direction: column; padding: 48px 24px; }
+    .intro-left { padding: 0; }
+    .intro-right { width: 100%; height: 400px; }
+    .intro-heading { font-size: 32px; }
+    .services-preview { padding: 48px 24px; }
+    .quote-section { padding: 48px 24px; }
+    .quote-text { font-size: 22px; }
+    .cta-section { padding: 48px 24px; }
+    .cta-heading { font-size: 32px; }
+  }
+</style>
