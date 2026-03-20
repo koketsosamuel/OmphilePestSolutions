@@ -49,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
       <span class="overline">TRUSTED PEST CONTROL ACROSS GAUTENG</span>
       <div class="headline-wrap">
         <div class="headline-line1">
-          <h1 class="headline-text">Your <span class="headline-highlight">home</span></h1>
+          <h1 class="headline-text">Your <span class="headline-highlight" id="typing-word">home</span></h1>
         </div>
         <p class="headline-line2">deserves better than pests.</p>
       </div>
@@ -300,7 +300,7 @@ import Layout from '../layouts/Layout.astro';
     <p class="section-body" style="max-width:700px">PestPro Solutions was founded on a simple belief: every home and business deserves honest, effective pest control — without the runaround. We treat your space like it's our own.</p>
     <div class="founder-quote">
       <div class="founder-photo">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Founder" />
+        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&q=80" alt="Founder" />
       </div>
       <div class="founder-text">
         <p class="founder-words">'I started this company because I was tired of seeing people get ripped off by cowboy operators. Families deserve better — they deserve someone who shows up on time, does the job properly, and charges a fair price.'</p>
@@ -308,7 +308,7 @@ import Layout from '../layouts/Layout.astro';
         <span class="founder-role">Founder & Lead Technician</span>
       </div>
     </div>
-    <a href="#about" class="btn-outline">Read Our Full Story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+
   </div></section>
 
   <!-- Get a Quote -->
@@ -489,8 +489,9 @@ import Layout from '../layouts/Layout.astro';
   .overline { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--accent-amber); }
   .headline-wrap { display: flex; flex-direction: column; gap: 4px; max-width: 500px; }
   .headline-text { font-family: var(--font-display); font-size: 48px; font-weight: 400; color: var(--primary-deep-forest); line-height: 1.1; }
-  .headline-highlight { position: relative; }
-  .headline-highlight::after { content: ''; position: absolute; bottom: 2px; left: 0; right: 0; height: 3px; background: var(--accent-sap-green); border-radius: 2px; }
+  .headline-highlight { display: inline; text-decoration: underline; text-decoration-color: var(--accent-sap-green); text-underline-offset: 4px; text-decoration-thickness: 3px; }
+  .typing-cursor { display: inline-block; width: 2px; height: 0.9em; background: var(--accent-sap-green); margin-left: 2px; vertical-align: baseline; animation: blink 0.7s step-end infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   .headline-line2 { font-family: var(--font-display); font-size: 48px; color: var(--primary-deep-forest); line-height: 1.1; }
   .hero-sub { font-size: 16px; color: var(--text-warm-grey); line-height: 1.6; max-width: 480px; }
   .hero-ctas { display: flex; align-items: center; gap: 16px; }
@@ -781,4 +782,47 @@ import Layout from '../layouts/Layout.astro';
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => menu?.classList.remove('open'));
   });
+
+  // Typing effect for headline word
+  const words = ['home', 'business', 'farm', 'office', 'warehouse'];
+  const el = document.getElementById('typing-word');
+  if (el) {
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    el.after(cursor);
+
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let isDeleting = true;
+    const typeSpeed = 100;
+    const deleteSpeed = 60;
+    const pauseAfterType = 2000;
+    const pauseAfterDelete = 300;
+
+    function tick() {
+      const currentWord = words[wordIndex];
+      if (!isDeleting) {
+        charIndex++;
+        el.textContent = currentWord.slice(0, charIndex);
+        if (charIndex === currentWord.length) {
+          isDeleting = true;
+          setTimeout(tick, pauseAfterType);
+          return;
+        }
+        setTimeout(tick, typeSpeed);
+      } else {
+        charIndex--;
+        el.textContent = currentWord.slice(0, charIndex);
+        if (charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(tick, pauseAfterDelete);
+          return;
+        }
+        setTimeout(tick, deleteSpeed);
+      }
+    }
+
+    setTimeout(tick, pauseAfterType);
+  }
 </script>
