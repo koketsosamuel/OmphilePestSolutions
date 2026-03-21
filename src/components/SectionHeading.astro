@@ -1,0 +1,99 @@
+---
+interface Props {
+  label?: string;
+  labelColor?: 'green' | 'amber';
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  size?: 'default' | 'lg';
+  maxWidth?: string;
+}
+
+const {
+  label,
+  labelColor = 'green',
+  title,
+  subtitle,
+  align = 'left',
+  size = 'default',
+  maxWidth,
+} = Astro.props;
+
+const titleClass = `sh-title ${size === 'lg' ? 'sh-title--lg' : ''}`;
+const alignClass = align === 'center' ? 'sh--center' : '';
+---
+
+<div class={`sh ${alignClass}`}>
+  {label && (
+    <span class={`sh-label ${labelColor === 'amber' ? 'sh-label--amber' : ''}`}>{label}</span>
+  )}
+  <h2 class={titleClass} style={maxWidth ? `max-width:${maxWidth}` : undefined}>
+    {title}
+  </h2>
+  {subtitle && (
+    <p class="sh-subtitle" style={maxWidth ? `max-width:${maxWidth}` : undefined}>
+      {subtitle}
+    </p>
+  )}
+</div>
+
+<style>
+  .sh {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .sh--center {
+    align-items: center;
+    text-align: center;
+  }
+  .sh-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-sap-green);
+  }
+  .sh-label--amber {
+    color: var(--accent-amber);
+  }
+  .sh-title {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--primary-deep-forest);
+    line-height: 1.15;
+  }
+  .sh-title--lg {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+  .sh-subtitle {
+    font-size: 16px;
+    color: var(--text-warm-grey);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 991.98px) {
+    .sh-title {
+      font-size: 34px;
+    }
+    .sh-title--lg {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .sh-title,
+    .sh-title--lg {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .sh-title,
+    .sh-title--lg {
+      font-size: 26px;
+    }
+  }
+</style>
