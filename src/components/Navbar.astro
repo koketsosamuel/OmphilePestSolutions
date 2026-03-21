@@ -1,0 +1,44 @@
+<!-- Nav Bar -->
+<nav class="navbar">
+  <div class="container">
+  <div class="nav-left">
+    <a href="/" style="display:flex;align-items:center;gap:8px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      <span class="nav-logo">PestPro Solutions</span>
+    </a>
+  </div>
+  <div class="mobile-menu">
+    <div class="nav-links">
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="/#about" class="nav-link">About</a>
+      <a href="/#areas" class="nav-link">Areas We Cover</a>
+    </div>
+    <div class="nav-right">
+      <a href="/#quote" class="btn-primary">Get a Free Quote</a>
+    </div>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.mobile-menu');
+
+  toggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu?.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (menu?.classList.contains('open') && !menu.contains(e.target as Node) && e.target !== toggle) {
+      menu.classList.remove('open');
+    }
+  });
+
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => menu?.classList.remove('open'));
+  });
+</script>

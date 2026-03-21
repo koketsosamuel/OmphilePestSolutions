@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UtilityBar from './UtilityBar.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  title: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+}
+
+const { title, heroTitle, heroSubtitle = 'Last Updated: March 2026' } = Astro.props;
+---
+
+<Layout title={title}>
+  <UtilityBar />
+  <Navbar />
+
+  <section class="policy-hero">
+    <span class="policy-hero-brand">OMPHILE PEST SOLUTIONS</span>
+    <h1 class="policy-hero-title">{heroTitle}</h1>
+    <span class="policy-hero-date">{heroSubtitle}</span>
+  </section>
+
+  <section class="policy-content">
+    <div class="policy-inner">
+      <slot />
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .policy-hero {
+    background: var(--primary-deep-forest);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 80px 16px;
+  }
+  .policy-hero-brand {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #7AAB84;
+  }
+  .policy-hero-title {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -1.5px;
+    text-align: center;
+  }
+  .policy-hero-date {
+    font-size: 14px;
+    color: #7AAB84;
+  }
+  .policy-content {
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 64px 16px 80px;
+  }
+  .policy-inner {
+    width: 100%;
+    max-width: 840px;
+  }
+
+  @media (max-width: 767.98px) {
+    .policy-hero {
+      padding: 48px 16px;
+    }
+    .policy-hero-title {
+      font-size: 36px;
+    }
+    .policy-content {
+      padding: 40px 16px 56px;
+    }
+  }
+</style>
