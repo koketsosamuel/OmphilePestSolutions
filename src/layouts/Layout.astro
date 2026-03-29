@@ -18,6 +18,9 @@ const { title, description = 'Omphile Pest Solutions – Professional pest contr
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="512x512" href="/Omphile Pest Favicon.png" />
     <title>{title}</title>
+    {import.meta.env.PROD && (
+      <script defer src="https://umami.client.brightsync.co.za/script.js" data-website-id="57b76091-2dcb-4e29-94d6-9f2c5d095ae7"></script>
+    )}
   </head>
   <body>
     <slot />
