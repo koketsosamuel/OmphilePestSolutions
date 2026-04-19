@@ -4,9 +4,51 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = 'Omphile Pest Solutions – Professional pest control across Gauteng' } = Astro.props;
+const {
+  title,
+  description = 'Omphile Pest Solutions – Professional pest control across Gauteng',
+  image,
+} = Astro.props;
+
+const siteBase = Astro.site ?? new URL('https://www.omphilebotshelo.co.za');
+const canonicalURL = new URL(Astro.url.pathname, siteBase);
+const socialImage = new URL(image ?? '/hero-pest-control.jpg', siteBase);
+const logoURL = new URL('/Logo.png', siteBase);
+
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Omphile Pest Solutions',
+  url: siteBase.href,
+  logo: logoURL.href,
+  image: socialImage.href,
+  telephone: '+27762805241',
+  email: 'pestsolutions@omphilebotshelo.co.za',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Mafikeng',
+    addressRegion: 'North West',
+    addressCountry: 'ZA',
+  },
+  areaServed: ['North West', 'Gauteng', 'South Africa'],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '07:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '08:00',
+      closes: '13:00',
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -15,9 +57,31 @@ const { title, description = 'Omphile Pest Solutions – Professional pest contr
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:site_name" content="Omphile Pest Solutions" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="512x512" href="/Omphile Pest Favicon.png" />
     <title>{title}</title>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+
     {import.meta.env.PROD && (
       <script defer src="https://umami.client.brightsync.co.za/script.js" data-website-id="57b76091-2dcb-4e29-94d6-9f2c5d095ae7"></script>
     )}
