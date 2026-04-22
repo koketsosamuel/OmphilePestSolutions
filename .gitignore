@@ -25,3 +25,11 @@ pnpm-debug.log*
 
 # pencil design files
 *.pen
+
+# Claude Code local settings
+.claude/
+
+# wrangler / cloudflare
+.wrangler/
+.dev.vars*
+!.dev.vars.example
