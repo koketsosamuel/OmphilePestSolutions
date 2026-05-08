@@ -1,0 +1,88 @@
+---
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import UtilityBar from '../components/UtilityBar.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Proof & Compliance – Omphile Pest Solutions" description="Review Omphile Pest Solutions proof points, compliance support, service documentation, and tender-ready pest control approach.">
+  <UtilityBar />
+  <Navbar />
+
+  <section class="page-hero">
+    <div class="container page-hero__grid">
+      <div class="page-hero__content">
+        <span class="page-kicker">PROOF & COMPLIANCE</span>
+        <h1 class="page-title">The details that help clients choose confidently.</h1>
+        <p class="page-lede">We keep our claims practical: clear scope, documented work, sensible safety guidance, and paperwork that supports home, business, and tender requirements.</p>
+        <div class="inline-actions">
+          <a href="/contact/" class="btn-primary">Request Credentials</a>
+          <a href="/services/" class="btn-outline">View Services</a>
+        </div>
+      </div>
+      <div class="page-hero__image">
+        <img src="/hero-pest-control.jpg" alt="Pest control professional preparing compliant treatment documentation" />
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container page-section__stack">
+      <SectionHeading
+        label="DOCUMENTATION"
+        title="What you can expect from a professional service."
+        subtitle="For contracts and facilities, documentation matters as much as treatment. We can provide the supporting information needed for internal records, audits, and procurement packs."
+        align="center"
+        maxWidth="760px"
+      />
+      <div class="content-grid">
+        <article class="content-card">
+          <h3>Service records</h3>
+          <p>Inspection notes, treatment summaries, product approach, and follow-up recommendations for the treated site.</p>
+        </article>
+        <article class="content-card">
+          <h3>Compliance support</h3>
+          <p>B-BBEE, CSD, SAPCA, and tender-related documentation can be supplied where required during quotation or procurement.</p>
+        </article>
+        <article class="content-card">
+          <h3>Safety guidance</h3>
+          <p>Clear preparation, re-entry, ventilation, and aftercare instructions for households, staff, visitors, and animals on site.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--stone">
+    <div class="container page-section__stack">
+      <SectionHeading
+        label="SERVICE PROOF"
+        labelColor="amber"
+        title="Proof is built into the workflow."
+        subtitle="Instead of relying on anonymous testimonials, we focus on the evidence clients can actually use: the inspection, the treatment record, the safety notes, and the follow-up path."
+        align="center"
+        maxWidth="760px"
+      />
+      <div class="content-grid content-grid--two">
+        <article class="content-card">
+          <h3>Before treatment</h3>
+          <ul>
+            <li>Identify pest type and affected areas.</li>
+            <li>Confirm access, safety, and preparation needs.</li>
+            <li>Explain the proposed treatment and expected outcome.</li>
+          </ul>
+        </article>
+        <article class="content-card">
+          <h3>After treatment</h3>
+          <ul>
+            <li>Share practical prevention recommendations.</li>
+            <li>Record the completed service and product approach.</li>
+            <li>Advise on follow-up timing where monitoring is required.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

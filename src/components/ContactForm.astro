@@ -1,0 +1,117 @@
+---
+import { services } from '../data/services';
+import { site } from '../data/site';
+---
+
+<form class="quote-form" data-contact-form data-endpoint={site.contactEndpoint}>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="contact-name">Full Name</label>
+      <input type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name" />
+    </div>
+    <div class="form-group">
+      <label for="contact-phone">Phone Number</label>
+      <input type="tel" id="contact-phone" name="phone" placeholder="+27..." autocomplete="tel" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" />
+    </div>
+    <div class="form-group">
+      <label for="contact-subject">Service Needed</label>
+      <select id="contact-subject" name="subject">
+        <option value="">Select a service</option>
+        {services.map((service) => <option value={service.title}>{service.title}</option>)}
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="contact-message">Tell us more</label>
+    <textarea id="contact-message" name="message" rows="4" placeholder="Describe your pest problem..." required></textarea>
+  </div>
+  <div class="form-honeypot" aria-hidden="true">
+    <label for="contact-website">Website</label>
+    <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+  <p class="form-status form-status--success" data-form-success hidden>Your message has been sent. We'll be in touch soon.</p>
+  <p class="form-status form-status--error" data-form-error hidden>Please add your message and at least one contact detail.</p>
+  <button type="submit" class="btn-primary btn-lg" data-submit-button style="align-self:flex-start">Submit</button>
+</form>
+
+<script>
+  document.querySelectorAll('[data-contact-form]').forEach((form) => {
+    if (!(form instanceof HTMLFormElement)) return;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const contactEndpoint = form.dataset.endpoint || '';
+
+      const formData = new FormData(form);
+      const name = String(formData.get('name') || '').trim();
+      const email = String(formData.get('email') || '').trim();
+      const phone = String(formData.get('phone') || '').trim();
+      const subject = String(formData.get('subject') || '').trim();
+      const message = String(formData.get('message') || '').trim();
+      const honeypot = String(formData.get('website') || '').trim();
+      const success = form.querySelector('[data-form-success]');
+      const error = form.querySelector('[data-form-error]');
+      const submitButton = form.querySelector('[data-submit-button]');
+
+      if (success instanceof HTMLElement) success.hidden = true;
+      if (error instanceof HTMLElement) error.hidden = true;
+
+      if (honeypot) {
+        if (success instanceof HTMLElement) success.hidden = false;
+        form.reset();
+        return;
+      }
+
+      if (!message || (!name && !email && !phone)) {
+        if (error instanceof HTMLElement) {
+          error.textContent = 'Please add your message and at least one contact detail.';
+          error.hidden = false;
+        }
+        return;
+      }
+
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      try {
+        const response = await fetch(contactEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            Subject: subject || 'Website enquiry',
+            name,
+            phone,
+            email,
+            message,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Contact form submission failed');
+        }
+
+        if (success instanceof HTMLElement) success.hidden = false;
+        form.reset();
+      } catch {
+        if (error instanceof HTMLElement) {
+          error.textContent = 'Something went wrong. Please try again or contact us directly.';
+          error.hidden = false;
+        }
+      } finally {
+        if (submitButton instanceof HTMLButtonElement) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Submit';
+        }
+      }
+    });
+  });
+</script>

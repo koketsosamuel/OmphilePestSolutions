@@ -1,0 +1,139 @@
+---
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import UtilityBar from '../components/UtilityBar.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="FAQ – Omphile Pest Solutions" description="Answers to common Omphile Pest Solutions questions about safety, treatment timing, pricing, guarantees, preparation, and commercial pest control contracts.">
+  <UtilityBar />
+  <Navbar />
+
+  <section id="faq" class="section">
+    <div class="container faq-section">
+      <SectionHeading
+        label="COMMON QUESTIONS"
+        title="Straight answers. No jargon."
+        align="center"
+      />
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Is your treatment safe for children and pets?</summary>
+          <p>Absolutely — this is something we take very seriously. We use products registered with the Department of Agriculture and always choose the lowest-toxicity option that will get the job done. We'll tell you exactly what we're using and why, how long to keep children and pets away, and what precautions to take.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a treatment take?</summary>
+          <p>Most residential treatments take 1-2 hours. We'll give you an accurate time estimate during the inspection.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you offer guarantees?</summary>
+          <p>Yes, every treatment comes with a written guarantee where appropriate for the service. If pests return within the guarantee period, we explain the follow-up or re-treatment path clearly.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How much does pest control cost?</summary>
+          <p>Pricing depends on the type of pest, property size, access, and severity. We provide clear quotes with no obligation.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to leave my house during treatment?</summary>
+          <p>For most chemical treatments, you'll need to vacate treated areas for 2-4 hours. We'll advise you on the specific requirements before treatment begins.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are you SAPCA registered?</summary>
+          <p>Yes, we can provide SAPCA-related documentation where required for your quote, procurement pack, or facility records.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are you B-BBEE compliant?</summary>
+          <p>Yes, we can provide B-BBEE and CSD documentation where required for business, government, and tender work.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work with government facilities?</summary>
+          <p>Absolutely. We support schools, hospitals, housing projects, municipal buildings, and other public-sector facilities with scheduled pest management and reporting.</p>
+        </details>
+      </div>
+      <p class="faq-cta-text">Still have questions?</p>
+      <a href="/contact/" class="btn-dark">Let Us Talk</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .section { padding: 80px 0; }
+
+  .faq-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .faq-cta-text {
+    font-size: 16px;
+    color: var(--text-warm-grey);
+    margin-bottom: -36px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border-mist);
+    padding: 24px 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item summary {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-deep-forest);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '›';
+    font-size: 24px;
+    color: var(--text-warm-grey);
+    transition: transform .3s;
+  }
+
+  .faq-item[open] summary::after {
+    transform: rotate(90deg);
+    color: var(--primary-deep-forest);
+  }
+
+  .faq-item p {
+    font-size: 16px;
+    color: var(--text-warm-grey);
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 767.98px) {
+    .section {
+      padding: 48px 0;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .faq-item summary {
+      font-size: 16px;
+    }
+  }
+</style>

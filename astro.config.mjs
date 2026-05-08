@@ -4,6 +4,15 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.omphilebotshelo.co.za',
-  integrations: [sitemap()],
+  site: 'https://pestsolutions.omphilebotshelo.co.za',
+  output: 'static',
+  trailingSlash: 'always',
+  build: {
+    format: 'directory',
+  },
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/404/'),
+    }),
+  ],
 });

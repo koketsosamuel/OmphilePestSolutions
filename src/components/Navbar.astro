@@ -1,3 +1,10 @@
+---
+import { primaryNav } from '../data/navigation';
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? currentPath === '/' : currentPath.startsWith(href));
+---
+
 <!-- Nav Bar -->
 <nav class="navbar">
   <div class="container">
@@ -8,12 +15,15 @@
   </div>
   <div class="mobile-menu">
     <div class="nav-links">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/#services" class="nav-link">Services</a>
-      <a href="/#about" class="nav-link">About</a>
-      <a href="/#areas" class="nav-link">Areas We Cover</a>
-      <a href="/#faq" class="nav-link">FAQ</a>
-      <a href="/#quote" class="nav-link">Contact Us</a>
+      {primaryNav.map((item) => (
+        <a
+          href={item.href}
+          class:list={['nav-link', { 'is-active': isActive(item.href) }]}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
     </div>
   </div>
   <button class="nav-toggle" aria-label="Toggle menu">

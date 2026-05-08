@@ -4,9 +4,10 @@ import UtilityBar from '../components/UtilityBar.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
-<Layout title="Omphile Pest Solutions – Trusted Pest Control Across Gauteng">
+<Layout title="Omphile Pest Solutions – Pest Control Across South Africa" description="Omphile Pest Solutions provides responsible pest control, fumigation, sanitation, and contract services for homes, businesses, farms, and public facilities.">
   <UtilityBar />
   <Navbar />
 
@@ -21,7 +22,7 @@ import SectionHeading from '../components/SectionHeading.astro';
         </div>
         <p class="headline-line2">deserves better than pests.</p>
       </div>
-      <p class="hero-sub">From Northwest to Gauteng, Omphile Pest Solutions delivers fast, thorough, and responsible pest control. We protect what matters most — your family, your home, your pets, and the environment we all share.</p>
+      <p class="hero-sub">From North West to Gauteng and across South Africa, Omphile Pest Solutions delivers fast, thorough, and responsible pest control. We protect what matters most: your family, your home, your pets, and the environment we all share.</p>
       <div class="hero-ctas">
         <a href="#quote" class="btn-primary">Get a Free Quote</a>
         <a href="tel:+27762805241" class="btn-outline">
@@ -131,23 +132,23 @@ import SectionHeading from '../components/SectionHeading.astro';
     />
     <div class="services-grid">
       <div class="services-row">
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg><h4>Termite Control</h4><p>Pre- and post-construction barrier treatments to protect your structure from silent damage.</p><a href="#services">Learn more →</a></div>
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/><line x1="2" y1="2" x2="22" y2="22"/></svg><h4>Cockroach Treatment</h4><p>Gel baiting and residual sprays targeting German, American, and Oriental species.</p><a href="#services">Learn more →</a></div>
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M14 16.5a2.5 2.5 0 0 0-5 0"/><path d="M3 2c.1 3.3 1.2 6.5 3 9.3"/><path d="M9 7.5c.8.8 1.4 1.8 1.8 2.8"/><path d="M21 2c-.1 3.3-1.2 6.5-3 9.3"/><path d="M15 7.5c-.8.8-1.4 1.8-1.8 2.8"/><path d="M12 13c-1 0-2 .4-2.7 1.1"/><path d="M12 13c1 0 2 .4 2.7 1.1"/><path d="M8.5 16.5c0 .8.1 1.6.4 2.3"/><path d="M15.5 16.5c0 .8-.1 1.6-.4 2.3"/><path d="M9 22h6"/></svg><h4>Rodent Control</h4><p>Humane bait stations, traps, and exclusion methods for rats and mice — focused on removal and prevention, not unnecessary harm.</p><a href="#services">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg><h4>Termite Control</h4><p>Pre- and post-construction barrier treatments to protect your structure from silent damage.</p><a href="/services/#termite-control">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/><line x1="2" y1="2" x2="22" y2="22"/></svg><h4>Cockroach Treatment</h4><p>Gel baiting and residual sprays targeting German, American, and Oriental species.</p><a href="/services/#cockroach-treatment">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M14 16.5a2.5 2.5 0 0 0-5 0"/><path d="M3 2c.1 3.3 1.2 6.5 3 9.3"/><path d="M9 7.5c.8.8 1.4 1.8 1.8 2.8"/><path d="M21 2c-.1 3.3-1.2 6.5-3 9.3"/><path d="M15 7.5c-.8.8-1.4 1.8-1.8 2.8"/><path d="M12 13c-1 0-2 .4-2.7 1.1"/><path d="M12 13c1 0 2 .4 2.7 1.1"/><path d="M8.5 16.5c0 .8.1 1.6.4 2.3"/><path d="M15.5 16.5c0 .8-.1 1.6-.4 2.3"/><path d="M9 22h6"/></svg><h4>Rodent Control</h4><p>Humane bait stations, traps, and exclusion methods for rats and mice — focused on removal and prevention, not unnecessary harm.</p><a href="/services/#rodent-control">Learn more →</a></div>
       </div>
       <div class="services-row">
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><h4>Mosquito & Fly Control</h4><p>Fogging, larviciding, and fly traps for commercial kitchens, warehouses, and outdoor areas.</p><a href="#services">Learn more →</a></div>
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg><h4>Bed Bug Treatment</h4><p>Heat and chemical treatments that eliminate bed bugs at every life stage — eggs included.</p><a href="#services">Learn more →</a></div>
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M16 7h.01"/><path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"/><path d="m20 7 2 .5-2 .5"/><path d="M10 18v3"/><path d="M14 17.75V21"/><path d="M7 18a6 6 0 0 0 3.84-10.61"/></svg><h4>Bird Control</h4><p>Humane netting, spikes, and deterrent systems that redirect pigeons and starlings away from commercial properties — without harming them.</p><a href="#services">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><h4>Mosquito & Fly Control</h4><p>Fogging, larviciding, and fly traps for commercial kitchens, warehouses, and outdoor areas.</p><a href="/services/#mosquito-fly-control">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg><h4>Bed Bug Treatment</h4><p>Heat and chemical treatments that eliminate bed bugs at every life stage — eggs included.</p><a href="/services/#bed-bug-treatment">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M16 7h.01"/><path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"/><path d="m20 7 2 .5-2 .5"/><path d="M10 18v3"/><path d="M14 17.75V21"/><path d="M7 18a6 6 0 0 0 3.84-10.61"/></svg><h4>Bird Control</h4><p>Humane netting, spikes, and deterrent systems that redirect pigeons and starlings away from commercial properties — without harming them.</p><a href="/services/#bird-control">Learn more →</a></div>
       </div>
       <div class="services-row">
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg><h4>Fumigation</h4><p>Full-structure fumigation for severe infestations in warehouses, silos, and storage facilities.</p><a href="#services">Learn more →</a></div>
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg><h4>Weed & Vegetation Control</h4><p>Careful herbicide application and vegetation management for pavements, fences, and open land — with low-toxicity products chosen to minimise soil and water impact.</p><a href="#services">Learn more →</a></div>
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3H9"/><path d="M7.5 12a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9"/><path d="M12 16.5a4.5 4.5 0 1 1 4.5-4.5M12 16.5V15"/><path d="M16.5 12a4.5 4.5 0 1 0-4.5-4.5M16.5 12H15"/></svg><h4>Lawn & Garden Pests</h4><p>Targeted treatments for lawn grubs, aphids, snails, and other garden invaders — carefully applied to protect pollinators and beneficial insects.</p><a href="#services">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg><h4>Fumigation</h4><p>Full-structure fumigation for severe infestations in warehouses, silos, and storage facilities.</p><a href="/services/#fumigation">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg><h4>Weed & Vegetation Control</h4><p>Careful herbicide application and vegetation management for pavements, fences, and open land — with low-toxicity products chosen to minimise soil and water impact.</p><a href="/services/#weed-vegetation-control">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3H9"/><path d="M7.5 12a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9"/><path d="M12 16.5a4.5 4.5 0 1 1 4.5-4.5M12 16.5V15"/><path d="M16.5 12a4.5 4.5 0 1 0-4.5-4.5M16.5 12H15"/></svg><h4>Lawn & Garden Pests</h4><p>Targeted treatments for lawn grubs, aphids, snails, and other garden invaders — carefully applied to protect pollinators and beneficial insects.</p><a href="/services/#lawn-garden-pests">Learn more →</a></div>
       </div>
       <div class="services-row">
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg><h4>Sanitation Services</h4><p>Deep cleaning and sanitisation for kitchens, bathrooms, and high-traffic commercial spaces.</p><a href="#services">Learn more →</a></div>
-        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg><h4>Government & Contract Services</h4><p>Scheduled pest management programmes for schools, hospitals, housing, and municipal buildings.</p><a href="#services">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg><h4>Sanitation Services</h4><p>Deep cleaning and sanitisation for kitchens, bathrooms, and high-traffic commercial spaces.</p><a href="/services/#sanitation-services">Learn more →</a></div>
+        <div class="svc-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1B3A2D" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg><h4>Government & Contract Services</h4><p>Scheduled pest management programmes for schools, hospitals, housing, and municipal buildings.</p><a href="/services/#government-contract-services">Learn more →</a></div>
         <div class="svc-card empty"></div>
       </div>
     </div>
@@ -310,47 +311,7 @@ import SectionHeading from '../components/SectionHeading.astro';
       align="center"
       maxWidth="600px"
     />
-    <form class="quote-form" onsubmit="return false;">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Your name" />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="+27..." />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="your@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="service">Service Needed</label>
-          <select id="service">
-            <option value="">Select a service</option>
-            <option>Termite Control</option>
-            <option>Cockroach Treatment</option>
-            <option>Rodent Control</option>
-            <option>Mosquito & Fly Control</option>
-            <option>Bed Bug Treatment</option>
-            <option>Bird Control</option>
-            <option>Fumigation</option>
-            <option>Weed & Vegetation Control</option>
-            <option>Lawn & Garden Pests</option>
-            <option>Sanitation Services</option>
-            <option>Government & Contract</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="message">Tell us more</label>
-        <textarea id="message" rows="4" placeholder="Describe your pest problem..."></textarea>
-      </div>
-      <button type="submit" class="btn-primary btn-lg" style="align-self:flex-start">Submit</button>
-    </form>
+    <ContactForm />
   </div></section>
 
   <!-- FAQ Section -->
@@ -619,10 +580,11 @@ import SectionHeading from '../components/SectionHeading.astro';
   // Typing effect for headline word
   const words = ['home', 'business', 'farm', 'office', 'warehouse'];
   const el = document.getElementById('typing-word');
-  if (el) {
+  if (el instanceof HTMLElement) {
+    const wordEl = el;
     const cursor = document.createElement('span');
     cursor.className = 'typing-cursor';
-    el.after(cursor);
+    wordEl.after(cursor);
 
     let wordIndex = 0;
     let charIndex = words[0].length;
@@ -636,7 +598,7 @@ import SectionHeading from '../components/SectionHeading.astro';
       const currentWord = words[wordIndex];
       if (!isDeleting) {
         charIndex++;
-        el.textContent = currentWord.slice(0, charIndex);
+        wordEl.textContent = currentWord.slice(0, charIndex);
         if (charIndex === currentWord.length) {
           isDeleting = true;
           setTimeout(tick, pauseAfterType);
@@ -645,7 +607,7 @@ import SectionHeading from '../components/SectionHeading.astro';
         setTimeout(tick, typeSpeed);
       } else {
         charIndex--;
-        el.textContent = currentWord.slice(0, charIndex);
+        wordEl.textContent = currentWord.slice(0, charIndex);
         if (charIndex === 0) {
           isDeleting = false;
           wordIndex = (wordIndex + 1) % words.length;

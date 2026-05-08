@@ -1,0 +1,25 @@
+---
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import UtilityBar from '../components/UtilityBar.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found – Omphile Pest Solutions" description="The Omphile Pest Solutions page you requested could not be found." noindex>
+  <UtilityBar />
+  <Navbar />
+
+  <section class="page-hero not-found">
+    <div class="container page-hero__content">
+      <span class="page-kicker">404</span>
+      <h1 class="page-title">This page is not available.</h1>
+      <p class="page-lede">The page may have moved, or the address may be incorrect. Use the links below to get back to the service information or request a quote.</p>
+      <div class="inline-actions">
+        <a href="/" class="btn-primary">Go Home</a>
+        <a href="/contact/" class="btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

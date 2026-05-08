@@ -1,0 +1,80 @@
+---
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import UtilityBar from '../components/UtilityBar.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Omphile Pest Solutions" description="Learn about Omphile Pest Solutions, a South African pest control team focused on careful inspections, practical treatment plans, and responsible product use.">
+  <UtilityBar />
+  <Navbar />
+
+  <section class="page-hero">
+    <div class="container page-hero__grid">
+      <div class="page-hero__content">
+        <span class="page-kicker">ABOUT US</span>
+        <h1 class="page-title">Pest control built on care, clarity, and proper work.</h1>
+        <p class="page-lede">Omphile Pest Solutions helps households, businesses, farms, and public facilities deal with pest pressure without guesswork. We inspect first, explain the plan, apply only what is needed, and follow up when the job calls for it.</p>
+        <div class="inline-actions">
+          <a href="/contact/" class="btn-primary">Request a Quote</a>
+          <a href="/proof/" class="btn-outline">View Proof</a>
+        </div>
+      </div>
+      <div class="page-hero__image">
+        <img src="/hero-pest-control.jpg" alt="Omphile Pest Solutions technician preparing pest control treatment" />
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container page-section__stack">
+      <SectionHeading
+        label="OUR APPROACH"
+        title="We treat the cause, not only the visible problem."
+        subtitle="A good pest treatment starts with the source: entry points, nesting areas, moisture, food access, sanitation, and maintenance gaps. That is how we reduce repeat callouts and help clients prevent the next infestation."
+        align="center"
+        maxWidth="760px"
+      />
+      <div class="content-grid">
+        <article class="content-card">
+          <h3>Inspect</h3>
+          <p>We identify the pest, the level of activity, the likely source, and the safety considerations before treatment starts.</p>
+        </article>
+        <article class="content-card">
+          <h3>Explain</h3>
+          <p>You get a clear treatment plan, product approach, preparation notes, re-entry guidance, and pricing before work begins.</p>
+        </article>
+        <article class="content-card">
+          <h3>Prevent</h3>
+          <p>We include practical advice on sealing, sanitation, waste handling, storage, and monitoring so the result lasts longer.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--stone">
+    <div class="container page-section__stack">
+      <SectionHeading
+        label="FOUNDING PRINCIPLE"
+        labelColor="amber"
+        title="Responsible treatment is part of the service."
+        subtitle="The goal is not to use the strongest product by default. The goal is to solve the pest issue safely and thoroughly while protecting people, pets, stock, gardens, and surrounding spaces."
+        align="center"
+        maxWidth="760px"
+      />
+      <div class="content-grid content-grid--two">
+        <article class="content-card">
+          <h3>For homes</h3>
+          <p>We plan around children, pets, daily routines, and the practical realities of living in the treated space.</p>
+        </article>
+        <article class="content-card">
+          <h3>For businesses</h3>
+          <p>We support compliance-sensitive environments with treatment records, follow-up recommendations, and scheduled service options.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,78 @@
+---
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServiceIcon from '../components/ServiceIcon.astro';
+import UtilityBar from '../components/UtilityBar.astro';
+import { services } from '../data/services';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pest Control Services – Omphile Pest Solutions" description="Explore Omphile Pest Solutions services including termite control, cockroach treatment, rodent control, fumigation, sanitation, and contract pest management.">
+  <UtilityBar />
+  <Navbar />
+
+  <section class="page-hero">
+    <div class="container page-hero__grid">
+      <div class="page-hero__content">
+        <span class="page-kicker">SERVICES</span>
+        <h1 class="page-title">Complete pest control for homes, businesses, farms, and facilities.</h1>
+        <p class="page-lede">Choose the service that matches the problem you can see, or contact us for an inspection if you are not sure what you are dealing with yet.</p>
+        <div class="inline-actions">
+          <a href="/contact/" class="btn-primary">Get a Free Quote</a>
+          <a href="/faq/" class="btn-outline">Read FAQ</a>
+        </div>
+      </div>
+      <div class="page-hero__image">
+        <img src="/hero-pest-control.jpg" alt="Professional pest control equipment and technician" />
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container page-section__stack">
+      <SectionHeading
+        label="WHAT WE DO"
+        title="Treatment plans matched to the pest and the property."
+        subtitle="Every service starts with practical diagnosis. We look at the pest type, the space, the risks, and the prevention steps that will matter after treatment."
+        align="center"
+        maxWidth="760px"
+      />
+      <div class="content-grid">
+        {services.map((service) => (
+          <article class="content-card" id={service.slug}>
+            <ServiceIcon slug={service.slug} />
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <a class="contact-link" href="/contact/">Request this service</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--stone">
+    <div class="container page-section__stack">
+      <SectionHeading
+        label="CONTRACT SUPPORT"
+        labelColor="amber"
+        title="Ongoing pest management for compliance-sensitive sites."
+        subtitle="For restaurants, schools, warehouses, government buildings, and managed properties, we can structure scheduled visits with reporting, recommendations, and follow-up records."
+        align="center"
+        maxWidth="760px"
+      />
+      <div class="content-grid content-grid--two">
+        <article class="content-card">
+          <h3>Scheduled visits</h3>
+          <p>Monthly, quarterly, or site-specific programmes for properties that need consistent monitoring and documentation.</p>
+        </article>
+        <article class="content-card">
+          <h3>Written records</h3>
+          <p>Treatment notes, safety guidance, product references, and follow-up recommendations can be supplied for your audit file.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

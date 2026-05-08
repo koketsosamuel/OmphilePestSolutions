@@ -1,0 +1,33 @@
+---
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import UtilityBar from '../components/UtilityBar.astro';
+import { footerLegalNav } from '../data/navigation';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Legal – Omphile Pest Solutions" description="Omphile Pest Solutions legal hub with privacy policy, terms and conditions, and cookie policy links.">
+  <UtilityBar />
+  <Navbar />
+
+  <section class="page-hero">
+    <div class="container page-hero__content">
+      <span class="page-kicker">LEGAL</span>
+      <h1 class="page-title">Policies for clients and website visitors.</h1>
+      <p class="page-lede">Find the current Omphile Pest Solutions website policies, service terms, privacy information, and cookie/analytics statement.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container legal-links">
+      {footerLegalNav.map((item) => (
+        <a class="content-card" href={item.href}>
+          <h3>{item.label}</h3>
+          <p>Read the current {item.label.toLowerCase()} for Omphile Pest Solutions.</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
